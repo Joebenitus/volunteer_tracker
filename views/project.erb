@@ -8,16 +8,18 @@
   <button type="submit" class="btn">Search</button>
 </form> %>
 
-<% if @project.volunteers %>
+<% if @project.volunteers.any? %>
   <ul>
     <% @project.volunteers.each do |volunteer| %>
       <li><a href="/projects/<%= @project.id %>/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a></li>
-    <% end %>
   </ul>
-  <a href="/projects/<%= @project.id %>/volunteers">Add new volunteer</a>
-<% else %>
-  <p>Oops! You haven't added any projects. <a href="/projects/new">Click here</a> to create a project.</p>
+      <a href="/projects/<%= @project.id %>/volunteers/<%= volunteer.id %>">Click here</a>
+    <% end %>
+  <% else %>
+    <p>This project has no volunteers. <a href="/projects/<%= @project.id %>/volunteers/new">Click here</a> to add one!</p>
 <% end %>
+
+
 
 <p><a href="/projects/<%= @project.id %>/edit">Edit project</a></p>
 <p><a href="/projects">Return to home</a></p>

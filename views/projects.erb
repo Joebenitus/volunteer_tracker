@@ -16,7 +16,16 @@
       <li><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
     <% end %>
   </ul>
-  <a href="/projects/new">Add new project</a>
 <% else %>
-  <p>Oops! You haven't added any projects. <a href="/projects/new">Click here</a> to create a project.</p>
+  <p>Oops! You haven't added any projects. Add a new project below.</p>
 <% end %>
+
+<h4>Add a new project</h4>
+
+<form action="/projects" method="post">
+  <div class="form-group">
+    <label for="project_title">Project name</label>
+    <input id="project_title" name="project_title" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Add project</button>
+</form>
