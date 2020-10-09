@@ -1,0 +1,20 @@
+<h3><%= @project.title %></h3>
+
+<%# <form action="/projects">
+  <div class="form-group">
+    <label for="search">Search</label>
+    <input id="search" name="search" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Search</button>
+</form> %>
+
+<% if @project.volunteers %>
+  <ul>
+    <% @project.volunteers.each do |volunteer| %>
+      <li><a href="/projects/<%= @project.id %>/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a></li>
+    <% end %>
+  </ul>
+  <a href="/projects/<%= @project.id %>/volunteers">Add new volunteer</a>
+<% else %>
+  <p>Oops! You haven't added any projects. <a href="/projects/new">Click here</a> to create a project.</p>
+<% end %>
