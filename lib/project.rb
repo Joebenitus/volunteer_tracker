@@ -8,7 +8,7 @@ class Project
   end
 
   def save
-    result = DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id;")
+    result = DB.exec("INSERT INTO projects (title) VALUES ('#{@title}') RETURNING id")
     @id = result.first.fetch('id').to_i
   end
 
@@ -35,7 +35,7 @@ class Project
   end
 
   def volunteers
-    returned_volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{@id};")
+    returned_volunteers = DB.exec("SELECT * FROM volunteers WHERE project_id = #{@id}")
     volunteers = []
     returned_volunteers.each do |volunteer|
       name = volunteer.fetch('name')
@@ -49,5 +49,9 @@ class Project
     @title = attributes.fetch(:title)
     @id = attributes.fetch(:id).to_i
     DB.exec("UPDATE projects SET title = '#{title}' WHERE id = #{id}")
+  end
+
+  def delete
+    DB.exec("DELETE FROM projects WHERE id = #{@id}")
   end
 end
