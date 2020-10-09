@@ -7,7 +7,12 @@ By **Joseph Karnafel**
 
 ## Setup/Installation Requirements
 
-{Setup Requirements}
+* _open terminal_
+* _type "cd desktop", then press enter_
+* _type "git clone https://github.com/Joebenitus/volunteer_tracker", then press enter_
+* _type "cd volunteer_tracker", then press enter_
+* _type "ruby app.rb", then press enter_
+* _in your web browser, enter the address 'localhost:5432' and press enter_
 
 ## Database Schema
 
@@ -27,17 +32,23 @@ There are no known bugs at this time
 
 ## Support and contact details
 
-{Contact Details}
+If you have any ideas on how I can improve this project, feel free to contact me or create a pull request.
 
 ## Technologies Used
 
-{Technologies Used}
+* _Ruby_
+* _PostgreSQL_
+* _VS Code_
+* _Sinatra_
+* _dotenv_
+* _rspec_
+* _Capybara_
 
 ### License
 
 MIT License
 
-Copyright (c) 2020 Joseph Karnafel, AJ Markow
+Copyright (c) 2020 Joseph Karnafel
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files the Software, to deal
@@ -57,4 +68,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-Copyright (c) 2020 ***Joseph Karnafel, AJ Markow***
+Copyright (c) 2020 ***Joseph Karnafel***
