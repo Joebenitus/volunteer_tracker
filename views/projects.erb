@@ -1,0 +1,22 @@
+<h1>Joe's Volunteer Project Manager</h1>
+
+<h3>Current Projects:</h3>
+
+<%# <form action="/projects">
+  <div class="form-group">
+    <label for="search">Search</label>
+    <input id="search" name="search" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn">Search</button>
+</form> %>
+
+<% if @projects.any? %>
+  <ul>
+    <% @projects.each do |project| %>
+      <li><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
+    <% end %>
+  </ul>
+  <a href="/projects/new">Add new project</a>
+<% else %>
+  <p>Oops! You haven't added any projects. <a href="/projects/new">Click here</a> to create a project.</p>
+<% end %>
